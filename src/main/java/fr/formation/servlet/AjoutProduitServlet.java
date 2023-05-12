@@ -9,28 +9,25 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/ajoutProduit")
-public class AjoutProduitServlet extends HttpServlet{
+public class AjoutProduitServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Affichage du formulaire
 		this.getServletContext()
-			.getRequestDispatcher("/WEB-INF/views/ajoutProduit.jsp")
-			.forward(req, resp);
+		.getRequestDispatcher("/WEB-INF/views/ajoutProduit.jsp")
+		.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		
 		// Récupérer les paramètres
-//		int id = req.getParameter("id");
-//		req.get
-//		String nom = req.getParameter("nom");
-//		float prix = req.getParameter("prix");
+		String id = req.getParameter("id");
+		String nom = req.getParameter("nom");
+		String prix = req.getParameter("prix");
+
 //		
-		
+
 	}
-	
-	
 
 }
