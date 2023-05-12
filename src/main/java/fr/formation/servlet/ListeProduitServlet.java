@@ -22,7 +22,7 @@ public class ListeProduitServlet extends HttpServlet{
 		produits.add(new Produit(1, "Volant", 100));
 		produits.add(new Produit(2, "Combinaison", 1000));
 		produits.add(new Produit(3, "Siège", 200));
-		produits.add(new Produit(3, "Roue", 800));
+		produits.add(new Produit(4, "Roue", 800));
 		
 		req.setAttribute("produits", produits);
 		
