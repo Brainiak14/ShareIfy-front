@@ -39,7 +39,7 @@ public class ConnexionServlet extends HttpServlet {
 			session.setAttribute("userSession", username);
 			
 			// Rediriger vers la page d'accueil
-			resp.sendRedirect("panier");
+			resp.sendRedirect("listeProduit");
 		}
 		
 		else { // On est PAS OK

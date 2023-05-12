@@ -11,7 +11,7 @@
 	<c:if test="${ userSession != null }">
 		<p>Vous avez les droits pour <a href="ajoutProduit">ajouter</a> un produit !</p>
 	</c:if>
-<h1>Produit</h1>
+<h1>Liste des produits disponibles</h1>
 <table>
 	<thead>
 	<tr>
