@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import fr.formation.model.*;
 import java.util.*;
 
+// test
 @WebServlet("/listeProduit")
 public class ListeProduitServlet extends HttpServlet{
 	@Override
@@ -23,12 +24,12 @@ public class ListeProduitServlet extends HttpServlet{
 		produits.add(new Produit(3, "Siège", 200));
 		produits.add(new Produit(3, "Roue", 800));
 		
-		//req.setAttribute("produits", produits);
+		req.setAttribute("produits", produits);
 		
-		req.setAttribute("message", "Shopping en kit");
+		//req.setAttribute("message", "Shopping en kit");
 		
 		this.getServletContext()	
-		.getRequestDispatcher("/WEB-INF/views/produits.jsp")
+		.getRequestDispatcher("/WEB-INF/views/listeProduit.jsp")
 		.forward(req, resp);
 	}
 }
