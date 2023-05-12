@@ -36,7 +36,7 @@ public class ConnexionServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 			
 			// On injecte dans la session le nom d'utilisateur
-			session.setAttribute("usernameSession", username);
+			session.setAttribute("userSession", username);
 			
 			// Rediriger vers la page d'accueil
 			resp.sendRedirect("panier");
