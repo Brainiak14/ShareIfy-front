@@ -25,18 +25,21 @@
 		</thead>
 
 		<tbody>
-			<form method="POST">
 				<c:forEach var="produit" items="${ produits }">
 					<tr>
 						<td>${ produit.getId() }</td>
 						<td>${ produit.nom }</td>
 						<td>${ produit.prix }</td>
-						<td><input type="submit" value="Ajouter" /></td>
+						<form action="addToCart" method="post">
+                            <input type="hidden" name="productId" value="<%= product.getId() %>">
+                            <button type="submit" class="btn btn-success">Ajouter au panier</button>
+                        </form>
 					</tr>
 				</c:forEach>
-			</form>
+
 		</tbody>
 	</table>
 	<p>${ unAttribut }</p>
+	 <a href="panier" class="btn btn-primary">Voir le panier</a>
 </body>
 </html>

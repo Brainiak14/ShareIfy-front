@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import fr.formation.model.*;
 import java.util.*;
 
@@ -32,4 +33,36 @@ public class ListeProduitServlet extends HttpServlet{
 		.getRequestDispatcher("/WEB-INF/views/listeProduit.jsp")
 		.forward(req, resp);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Récupérer les paramètres
+		//Produit p1 = req.getParameter("produit");
+		// Vérifier si le login est OK
+		// On récupère la session de l'utilisateur
+		//HttpSession session = req.getSession();
+		// On injecte dans la session le nom d'utilisateur
+		//session.setAttribute("userSession", username);
+		// Rediriger vers la page panier
+		//resp.sendRedirect("panier");
+		
+		
+		
+		//Ajouter le produit au panier de l'utilisateur
+        HttpSession session = request.getSession();
+        List<Produit> panier = (List<Produit>) session.getAttribute("panier");
+        if (panier == null) {
+            panier = new ArrayList<>();
+            session.setAttribute("panier", panier);
+        }
+        panier.add(selectedProduit);
+
+        response.sendRedirect("cart");
+    }
+	}
+		
+		
+
+		
+	
 }
