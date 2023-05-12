@@ -22,13 +22,16 @@
 	</thead>
 	
 	<tbody>
+	<form method="POST">
 	<c:forEach var="produit" items="${ produits }">
 			<tr>
 				<td>${ produit.getId() }</td>
 				<td>${ produit.nom }</td>
 				<td>${ produit.prix }</td>
+				<td><input type="submit" value="Ajouter" /></td>
 			</tr>
 		</c:forEach>
+		</form>
 		</tbody>
 	</table>
 		<p>${ unAttribut }</p>
