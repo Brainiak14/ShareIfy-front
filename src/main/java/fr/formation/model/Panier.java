@@ -4,18 +4,22 @@ import java.util.*;
 
 public class Panier {
 	private int id;
-	private List<Produit> produit;
+	private List<Produit> produits;
+	
+	//GS
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public List<Produit> getProduit() {
-		return produit;
+	public List<Produit> getProduits() {
+		return produits;
 	}
-	public void setProduit(List<Produit> produit) {
-		this.produit = produit;
+	public void setProduits(List<Produit> produits) {
+		this.produits = produits;
 	}
+
+	
 	
 }
