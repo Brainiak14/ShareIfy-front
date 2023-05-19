@@ -1,12 +1,16 @@
 package fr.formation.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import cn.techtutorial.model.Cart;
+import fr.formation.model.Panier;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/ajoutProduit")
 public class AjoutProduitServlet extends HttpServlet {
@@ -22,9 +26,17 @@ public class AjoutProduitServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// Récupérer les paramètres
-		String id = req.getParameter("id");
-		String nom = req.getParameter("nom");
-		String prix = req.getParameter("prix");
+		int id = Integer.parseInt(req.getParameter("id"));
+		Panier panier = new Panier();
+		panier.setId(id);
+
+		
+		ArrayList<Panier> listePanier = new ArrayList<>();
+		
+		HttpSession session = req.getSession();
+		
+		ArrayList<Panier> listePanierSession = (ArrayList<Panier>) session.getAttribute("liste-panier");
+		
 
 //		
 

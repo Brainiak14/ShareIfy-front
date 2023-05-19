@@ -1,15 +1,16 @@
 package fr.formation.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import fr.formation.model.Produit;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import fr.formation.model.*;
-import java.util.*;
 
 // test
 @WebServlet("/listeProduit")
@@ -49,7 +50,7 @@ public class ListeProduitServlet extends HttpServlet{
 		
 		
 		//Ajouter le produit au panier de l'utilisateur
-        HttpSession session = request.getSession();
+        HttpSession session = req.getSession();
         List<Produit> panier = (List<Produit>) session.getAttribute("panier");
         if (panier == null) {
             panier = new ArrayList<>();
@@ -57,7 +58,7 @@ public class ListeProduitServlet extends HttpServlet{
         }
         panier.add(selectedProduit);
 
-        response.sendRedirect("cart");
+        resp.sendRedirect("panier");
     }
 	}
 		
