@@ -56,7 +56,19 @@ public class ListeProduitServlet extends HttpServlet{
             panier = new ArrayList<>();
             session.setAttribute("panier", panier);
         }
-        //panier.add(selectedProduit);
+        //recuperer l'id de la méthode post du bouton ajouter au panier
+        int idProduitRequete = Integer.parseInt(req.getParameter("productId"));
+        
+        //liste des produits dispo
+        List<Produit> produitsDisponibles = (List<Produit>) req.getAttribute("produits");
+        
+        for (Produit p : produitsDisponibles) {
+        	if (p.getId() == idProduitRequete) {
+        		panier.add(p);
+        	}
+        	
+        }        
+     
 
         resp.sendRedirect("panier");
     }
