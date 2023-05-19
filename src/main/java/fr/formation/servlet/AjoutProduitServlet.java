@@ -3,7 +3,6 @@ package fr.formation.servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import cn.techtutorial.model.Cart;
 import fr.formation.model.Panier;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

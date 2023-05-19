@@ -56,7 +56,7 @@ public class ListeProduitServlet extends HttpServlet{
             panier = new ArrayList<>();
             session.setAttribute("panier", panier);
         }
-        panier.add(selectedProduit);
+        //panier.add(selectedProduit);
 
         resp.sendRedirect("panier");
     }

@@ -30,8 +30,8 @@
 						<td>${ produit.getId() }</td>
 						<td>${ produit.nom }</td>
 						<td>${ produit.prix }</td>
-						<form action="addToCart" method="post">
-                            <input type="hidden" name="productId" value="<%= product.getId() %>">
+						<form action="ajouterAuPanier" method="post">
+                            <input type="hidden" name="productId" value="${ produit.getId() }">
                             <button type="submit" class="btn btn-success">Ajouter au panier</button>
                         </form>
 					</tr>
